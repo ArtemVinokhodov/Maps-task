@@ -13,10 +13,15 @@ public class CountModel {
         System.out.print("Input id: ");
         int inputId = Integer.parseInt(scanner.nextLine().trim());
         Map<Integer, Product> allData = getData();
+        boolean found = false;
         for (Map.Entry<Integer, Product> entry : allData.entrySet()) {
             if (inputId == entry.getKey()) {
                 System.out.println(entry.getValue());
+                found = true;
             }
+        }
+        if (!found) {
+            System.out.println("No such product");
         }
     }
 
